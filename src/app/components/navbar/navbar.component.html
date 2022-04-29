@@ -1,0 +1,114 @@
+<div class='navbar'>
+  <div class='navbar__container container'>
+    <div class='navbar__logo'>
+      <a routerLink="/">
+        <img
+          src='../../../assets/images/navbar/logo.svg'
+          alt='logo'
+        />
+      </a>
+    </div>
+    <div class="navbar__logo-mobile">
+      <a routerLink="/">
+        <img
+          src="../../../assets/images/navbar/logo-mobile.svg"
+          alt="logo"
+        />
+      </a>
+    </div>
+    <nav class='navbar__navigation navigation'>
+      <ul class='navigation__list'>
+        <li class='navigation__item'>
+          <a
+            routerLink="/"
+            class="navigation__link"
+            routerLinkActive="navigation__link_active"
+          >
+            Главная
+          </a>
+        </li>
+        <li class='navigation__item'>
+          <a
+            routerLink="/map"
+            class="navigation__link"
+            routerLinkActive="navigation__link_active"
+          >
+            Пункты сбора
+          </a>
+        </li>
+        <li class='navigation__item'>
+          <a
+            routerLink="/market"
+            class="navigation__link"
+            routerLinkActive="navigation__link_active"
+          >
+            ЭкоМаркет
+          </a>
+        </li>
+        <li class='navigation__item'>
+          <NavLink
+            routerLink="/about"
+            class="navigation__link"
+            routerLinkActive="navigation__link_active"
+          >
+            О сервисе
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+    <ul class='navbar__user user-navbar'>
+      <li class='user-navbar__city'>
+        <button class='user-navbar__button'>
+          <img src="/src/assets/icons/pin.svg" alt="ping"/>
+          Казань
+        </button>
+      </li>
+
+      <ng-container *ngIf="authService.isAuthenticated; else notAuthed">
+        <li class='user-navbar__balance'>
+          <a
+            [routerLink]="['/profile', userId]"
+            class="user-navbar__link"
+          >
+            <img src="/src/assets/icons/eco-dollar.svg" alt='eco-dollar'/>
+            {{balance}}
+          </a>
+        </li>
+        <li class='user-navbar__item'>
+          <a
+            [routerLink]="['/profile', userId]"
+            class="user-navbar__link"
+          >
+            <img src="/src/assets/images/navbar/profile-image-s.svg" alt='avatar'/>
+            <span class="user-navbar__user-name">{{userName}}</span>
+          </a>
+        </li>
+
+      </ng-container>
+
+      <ng-template #notAuthed>
+        <li class='user-navbar__item'>
+          <button
+            class='user-navbar__button'
+          >
+            <img src="/src/assets/icons/login.svg" alt="login"/>
+            Войти
+          </button>
+        </li>
+      </ng-template>
+
+    </ul>
+
+    <div class="navbar__mobile">
+      <div
+        class="user-navbar__burger burger"
+      >
+        <div class="burger__container">
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
