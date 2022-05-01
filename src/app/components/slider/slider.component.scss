@@ -1,0 +1,12 @@
+.slider {
+  position: relative;
+
+  &__container {
+    overflow: hidden;
+    border-radius: 16px;
+
+    @media (max-width: 959px) {
+      border-radius: 0;
+    }
+  }
+}

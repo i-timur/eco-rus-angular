@@ -1,3 +1,6 @@
+@import '~swiper/scss';
+@import '~swiper/scss/navigation';
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 *,
@@ -64,4 +67,51 @@ html, body {
 
 .hide {
   display: none !important;
+}
+
+.swiper {
+  position: static;
+
+  &-slide {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+
+    @media (max-width: 959px) {
+      border-radius: 0;
+    }
+  }
+
+  &-button-prev, &-button-next {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+    box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12);
+
+    @media (max-width: 959px) {
+      display: none;
+    }
+  }
+
+  &-button-prev {
+    background-image: url('assets/icons/arrow-left.svg');
+    left: -22px;
+  }
+
+  &-button-next {
+    background-image: url('assets/icons/arrow-right.svg');
+    right: -22px;
+  }
+
+  &-button-prev::after, &-button-next::after {
+    display: none;
+  }
 }

@@ -1,0 +1,13 @@
+.mainLayout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__upper {
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+  }
+}

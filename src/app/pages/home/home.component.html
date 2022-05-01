@@ -1,0 +1,22 @@
+<div class='home'>
+  <div class='home__container'>
+
+    <div class='home__slider'>
+      <app-slider></app-slider>
+    </div>
+
+    <div class='home__cards cards-home'>
+      <div class='cards-home__container container'>
+        <div class="cards-home__item" *ngFor="let card of homeCards">
+          <app-home-card
+            [title]="card.title"
+            [subtitle]="card.subtitle"
+            [to]="card.link"
+            [image]="card.image"
+          ></app-home-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
