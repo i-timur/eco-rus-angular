@@ -1,0 +1,67 @@
+<div class='modal-enter-code'>
+  <div class='modal-enter-code__container'>
+
+    <div class='modal-enter-code__header'>
+      <h2 class='modal-enter-code__title'>Вход</h2>
+      <button
+        class='modal-enter-code__close'
+        type='button'
+        (click)="close()"
+      ><img src="../../../../assets/icons/close.svg" /></button>
+    </div>
+
+    <div class='modal-enter-code__body'>
+
+      <h6 class='modal-enter-code__subtitle'>
+        Введите код отправленный вам на телефон
+        <span class='modal-enter-code__phone-number'><br />+7 (917) 888 88 88</span>
+      </h6>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='modal-enter-code__input'>
+          <input
+            app-input
+            type="text"
+            placeholder="Код"
+            formControlName="code"
+          />
+        </div>
+        <span
+          class="modal-enter-code__alert"
+          *ngIf="form.get('code')?.touched && form.get('code')?.invalid"
+        >Введите код</span>
+
+        <div class='modal-enter-code__send-button'>
+          <button
+            app-btn
+            color="primary"
+            size="m"
+            type="submit"
+            [disabled]="form.invalid"
+          >Отправить</button>
+        </div>
+
+      </form>
+
+      <div class='modal-enter-code__link'>
+        <button
+          app-text-btn
+          type="button"
+        >Не получил(-а) код</button>
+      </div>
+
+      <div class='modal-enter-code__login-button-for-partners'>
+        <button
+          app-btn
+          color="secondary"
+          size="m"
+          type="button"
+          (click)="openSignInForPartnersDialog()"
+        >Вход для партнёров</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

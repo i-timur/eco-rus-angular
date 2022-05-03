@@ -1,0 +1,89 @@
+<div class='modal-sign-in-for-partner'>
+  <div class='modal-sign-in-for-partner__container'>
+
+    <div class='modal-sign-in-for-partner__header'>
+      <h2 class='modal-sign-in-for-partner__title'>Вход</h2>
+      <button
+        class='modal-sign-in-for-partner__close'
+        type='button'
+        (click)="close()"
+      ><img src="../../../../assets/icons/close.svg" /></button>
+    </div>
+
+    <div class='modal-sign-in-for-partner__body'>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='modal-sign-in-for-partner__inputs'>
+
+          <div class='modal-sign-in-for-partner__input'>
+            <input
+              app-input
+              type="text"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+          <div
+            class="modal-sign-in-for-partner__errors"
+            *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+          >
+            <span
+              class="modal-sign-in-for-partner__error"
+              *ngIf="form.get('email')?.errors?.['required']"
+            >Введите почту</span>
+            <span
+              class="modal-sign-in-for-partner__error"
+              *ngIf="form.get('email')?.errors?.['email']"
+            >Неверный формат</span>
+          </div>
+          <div class='modal-sign-in-for-partner__input'>
+            <input
+              app-input
+              type="text"
+              placeholder="Пароль"
+              formControlName="password"
+            />
+          </div>
+          <span
+            class="modal-sign-in-for-partner__alert"
+            *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+          >Введите пароль</span>
+        </div>
+
+        <div class='modal-sign-in-for-partner__login-button'>
+          <button
+            app-btn
+            color="primary"
+            size="m"
+            type="submit"
+            [disabled]="form.invalid"
+          >Войти</button>
+        </div>
+
+      </form>
+
+      <div class='modal-sign-in-for-partner__links'>
+
+        <div class='modal-sign-in-for-partner__link'>
+          <button
+            app-text-btn
+            type="button"
+            (click)="openSignInWithPhoneDialog()"
+          >Войти с помощью смс</button>
+        </div>
+
+        <div class='modal-sign-in-for-partner__link'>
+          <button
+            app-text-btn
+            type="button"
+            (click)="openSignUpDialog()"
+          >Регистрация</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

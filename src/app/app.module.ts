@@ -15,6 +15,19 @@ import { SliderComponent } from './components/slider/slider.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { SlideBtnComponent } from './components/ui/slide-btn/slide-btn.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
+import { ModalContainerComponent } from './components/modals/modal-container/modal-container.component';
+import {PortalModule} from '@angular/cdk/portal';
+import { SignInDialogComponent } from './components/modals/sign-in-dialog/sign-in-dialog.component';
+import { InputComponent } from './components/ui/input/input.component';
+import {DialogModule} from '@angular/cdk-experimental/dialog';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BtnComponent } from './components/ui/btn/btn.component';
+import { TextBtnComponent } from './components/ui/text-btn/text-btn.component';
+import {HttpClientModule} from '@angular/common/http';
+import { SignUpDialogComponent } from './components/modals/sign-up-dialog/sign-up-dialog.component';
+import { SignInWithPhoneComponent } from './components/modals/sign-in-with-phone/sign-in-with-phone.component';
+import { EnterCodeDialogComponent } from './components/modals/enter-code-dialog/enter-code-dialog.component';
+import { SignInForPartnersDialogComponent } from './components/modals/sign-in-for-partners-dialog/sign-in-for-partners-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +41,27 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
     SliderComponent,
     SlideComponent,
     SlideBtnComponent,
-    HomeCardComponent
+    HomeCardComponent,
+    ModalContainerComponent,
+    SignInDialogComponent,
+    InputComponent,
+    BtnComponent,
+    TextBtnComponent,
+    SignUpDialogComponent,
+    SignInWithPhoneComponent,
+    EnterCodeDialogComponent,
+    SignInForPartnersDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
+    PortalModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

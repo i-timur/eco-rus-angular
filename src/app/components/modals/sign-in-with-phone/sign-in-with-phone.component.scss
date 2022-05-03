@@ -1,0 +1,57 @@
+.modal-sign-up {
+  &__container {
+    width: 480px;
+    padding: 48px;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(0, 11, 38, 0.88);
+  }
+
+  &__close {
+    background-color:#FFFFFF;
+    cursor: pointer;
+  }
+
+  &__body {
+    margin: 48px 0 0 0;
+  }
+
+  &__input {
+    &:not(:first-child) {
+      margin: 24px 0 0 0;
+    }
+  }
+
+  &__alert {
+    display: block;
+    margin: 8px 0 0 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FF4545;
+  }
+
+  &__get-code-button {
+    margin: 32px 0 0 0;
+  }
+
+  &__link {
+    margin: 16px 0 0 0;
+  }
+
+  &__login-button-for-partners {
+    margin: 32px 0 0 0;
+  }
+}

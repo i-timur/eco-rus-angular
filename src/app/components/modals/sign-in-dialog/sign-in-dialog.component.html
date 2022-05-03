@@ -1,0 +1,95 @@
+<div class='modal-authentication'>
+  <div class='modal-authentication__container'>
+
+    <div class='modal-authentication__header'>
+      <h2 class='modal-authentication__title'>Вход</h2>
+      <button
+        class='modal-authentication__close'
+        type='button'
+        (click)="close()"
+      ><img src="../../../../assets/icons/close.svg" /></button>
+    </div>
+
+    <div class='modal-authentication__body'>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='modal-authentication__inputs'>
+
+          <div class='modal-authentication__input'>
+           <input
+            app-input
+            type="text"
+            placeholder="Телефон"
+            formControlName="phoneNumber"
+           />
+          </div>
+          <span
+            class="modal-authentication__alert"
+            *ngIf="form.get('phoneNumber')?.touched && form.get('phoneNumber')?.invalid"
+          >Введите номер телефона</span>
+
+          <div class='modal-authentication__input'>
+            <input
+              app-input
+              type="password"
+              placeholder="Пароль"
+              formControlName="password"
+            />
+          </div>
+          <span
+            class="modal-authentication__alert"
+            *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+          >Введите пароль</span>
+        </div>
+        <span
+          class='modal-authentication__alert'
+          *ngIf="isUserIncorrect"
+        >Введенный вами логин или пароль не верен</span>
+
+        <div class='modal-authentication__login-button'>
+          <button
+            app-btn
+            color="primary"
+            size="m"
+            type="submit"
+            [disabled]="form.invalid || submitted"
+          >Войти</button>
+        </div>
+
+      </form>
+
+      <div class='modal-authentication__links'>
+
+        <div class='modal-authentication__link'>
+          <button
+            app-text-btn
+            type="button"
+            (click)="openSignInWithPhoneDialog()"
+          >Войти с помощью смс</button>
+        </div>
+
+        <div class='modal-authentication__link'>
+          <button
+            app-text-btn
+            type="button"
+            (click)="openSignUpDialog()"
+          >Регистрация</button>
+        </div>
+
+      </div>
+
+      <div class='modal-authentication__login-button-for-partners'>
+        <button
+          app-btn
+          color="secondary"
+          size="m"
+          type="button"
+          (click)="openSignInForPartnersDialog()"
+        >Вход для партнёров</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

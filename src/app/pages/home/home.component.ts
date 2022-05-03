@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 export const _homeCards = [
   {
@@ -21,13 +21,9 @@ export const _homeCards = [
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   homeCards = _homeCards;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

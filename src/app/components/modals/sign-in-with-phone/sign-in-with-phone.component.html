@@ -1,0 +1,64 @@
+<div class='modal-sign-up'>
+  <div class='modal-sign-up__container'>
+
+    <div class='modal-sign-up__header'>
+      <h2 class='modal-sign-up__title'>Вход или регистрация</h2>
+      <button
+        class='modal-sign-up__close'
+        type='button'
+        (click)="close()"
+      ><img src="../../../../assets/icons/close.svg" /></button>
+    </div>
+
+
+    <div class='modal-sign-up__body'>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='modal-sign-up__input'>
+          <input
+            app-input
+            type="text"
+            placeholder="Телефон"
+            formControlName="phoneNumber"
+          />
+        </div>
+        <span
+          class="modal-sign-up__alert"
+          *ngIf="form.get('phoneNumber')?.touched && form.get('phoneNumber')?.invalid"
+        >Введите номер телефона</span>
+
+        <div class='modal-sign-up__get-code-button'>
+          <button
+            app-btn
+            color="primary"
+            size="m"
+            type="submit"
+            [disabled]="form.invalid"
+          >Получить код</button>
+        </div>
+
+      </form>
+
+      <div class='modal-sign-up__link'>
+        <button
+          app-text-btn
+          type="button"
+          (click)="openSignInDialog()"
+        >Я уже зарегистировался(-ась)</button>
+      </div>
+
+      <div class='modal-sign-up__login-button-for-partners'>
+        <button
+          app-btn
+          color="secondary"
+          size="m"
+          type="button"
+          (click)="openSignInForPartnersDialog()"
+        >Вход для партнёров</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.modal-sign-in-for-partner {
+  &__container {
+    width: 480px;
+    padding: 48px;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(0, 11, 38, 0.88);
+  }
+
+  &__close {
+    background-color:#FFFFFF;
+    cursor: pointer;
+  }
+
+  &__body {
+    margin: 48px 0 0 0;
+  }
+
+  &__input {
+    &:not(:first-child) {
+      margin: 24px 0 0 0;
+    }
+  }
+
+  &__errors {
+    margin: 8px 0 0 0;
+  }
+
+  &__error {
+    display: block;
+    margin: 0 0 0 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FF4545;
+  }
+
+  &__alert {
+    display: block;
+    margin: 8px 0 0 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FF4545;
+  }
+
+  &__login-button {
+    margin: 32px 0 0 0;
+  }
+
+  &__links {
+    margin: 16px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

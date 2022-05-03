@@ -1,0 +1,101 @@
+<div class='modal-registration'>
+  <div class='modal-registration__container'>
+
+    <div class='modal-registration__header'>
+      <h2 class='modal-registration__title'>Регистрация</h2>
+      <button
+        class='modal-registration__close'
+        type='button'
+        (click)="close()"
+      ><img src="../../../../assets/icons/close.svg" /></button>
+    </div>
+
+    <div class='modal-registration__body'>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='modal-registration__inputs'>
+
+          <div class='modal-registration__input'>
+            <input
+              app-input
+              type="text"
+              placeholder="Имя пользователя"
+              formControlName="name"
+            />
+          </div>
+          <span
+            class="modal-registration__alert"
+            *ngIf="form.get('name')?.touched && form.get('name')?.invalid"
+          >Введите имя пользователя</span>
+
+          <div class='modal-registration__input'>
+            <input
+              app-input
+              type="text"
+              placeholder="Номер телефона"
+              formControlName="login"
+            />
+          </div>
+          <span
+            class="modal-registration__alert"
+            *ngIf="form.get('login')?.touched && form.get('login')?.invalid"
+          >Введите номер телефона</span>
+
+          <div class='modal-registration__input'>
+            <input
+              app-input
+              type="password"
+              placeholder="Пароль"
+              formControlName="password"
+            />
+          </div>
+          <span
+            class="modal-registration__alert"
+            *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+          >Введите пароль</span>
+
+        </div>
+        <span
+          class='modal-authentication__alert'
+          *ngIf="isLoginAlreadyUsed"
+        >Введенный вами логин уже используется</span>
+
+        <div class='modal-registration__login-button'>
+          <button
+            app-btn
+            color="primary"
+            size="m"
+            type="submit"
+            [disabled]="form.invalid || submitted"
+          >Зарегистрироваться</button>
+        </div>
+
+      </form>
+
+      <div class='modal-registration__links'>
+
+        <div class='modal-registration__link'>
+          <button
+            app-text-btn
+            type="button"
+            (click)="openSignInDialog()"
+          >Я уже зарегистировался(-ась)</button>
+        </div>
+
+      </div>
+
+      <div class='modal-registration__login-button-for-partners'>
+        <button
+          app-btn
+          color="secondary"
+          size="m"
+          type="button"
+          (click)="openSignInForPartnersDialog()"
+        >Вход для партнёров</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

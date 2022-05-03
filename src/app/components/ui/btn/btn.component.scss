@@ -1,0 +1,38 @@
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  letter-spacing: -0.25px;
+
+  &.app-primary {
+    background: #07C88E;
+    color: #FFFFFF;
+  }
+
+  &.app-secondary {
+    background: rgba(62, 80, 114, 0.08);
+    color: rgba(0, 11, 38, 0.8);
+  }
+
+  &.app-small {
+    min-height: 48px;
+  }
+
+  &.app-medium {
+    min-height: 56px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.cdk-keyboard-focus {
+    box-shadow: 0 0 0 3px rgba(16, 16, 189, 0.7);
+  }
+}

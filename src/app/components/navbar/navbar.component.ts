@@ -1,5 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {AuthService} from '@services/auth.service';
+import {DialogService} from '@services/dialog.service';
+import {SignInDialogComponent} from '@components/modals/sign-in-dialog/sign-in-dialog.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +9,17 @@ import {AuthService} from '@services/auth.service';
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   userName = 'Алексей'
   balance = 1000;
   userId = 1;
 
-  constructor(public authService: AuthService) { }
+  constructor(
+    public authService: AuthService,
+    private dialogService: DialogService
+  ) { }
 
-  ngOnInit(): void {
+  openSignInDialog() {
+    this.dialogService.openDialog(SignInDialogComponent)
   }
-
 }
