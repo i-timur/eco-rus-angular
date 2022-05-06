@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserAuthDto} from '../dtos/userAuthDto';
-import {Observable, tap} from 'rxjs';
+import {UserAuthDto} from '../dto/userAuthDto';
+import {BehaviorSubject, Observable, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  private _isAuthed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!!this.token);
+  readonly isAuthed$ = this._isAuthed.asObservable();
 
-  get isAuthenticated(): boolean {
-    return !!this.token;
-  }
+  constructor(private http: HttpClient) { }
 
   get token() {
     return localStorage.getItem('token');
@@ -31,10 +30,14 @@ export class AuthService {
       'https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/login',
       user
     )
-      .pipe(tap((resp: any) => this.setToken(resp.token)));
+      .pipe(tap((resp: any) => {
+        this.setToken(resp.token);
+        this._isAuthed.next(!!this.token);
+      }));
   }
 
   logout() {
     localStorage.removeItem('token');
+    this._isAuthed.next(!!this.token);
   }
 }

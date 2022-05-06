@@ -65,23 +65,23 @@
         </button>
       </li>
 
-      <ng-container *ngIf="authService.isAuthenticated; else notAuthed">
+      <ng-container *ngIf="isAuthed$ | async; else notAuthed">
         <li class='user-navbar__balance'>
           <a
-            [routerLink]="['/profile', userId]"
+            [routerLink]="['/profile', user.id]"
             class="user-navbar__link"
           >
             <img src="../../../assets/icons/eco-dollar.svg" alt='eco-dollar'/>
-            {{balance}}
+            {{user.balance}}
           </a>
         </li>
         <li class='user-navbar__item'>
           <a
-            [routerLink]="['/profile', userId]"
+            [routerLink]="['/profile', user.id]"
             class="user-navbar__link"
           >
             <img src="../../../assets/images/navbar/profile-image-s.svg" alt='avatar'/>
-            <span class="user-navbar__user-name">{{userName}}</span>
+            <span class="user-navbar__user-name">{{user.username}}</span>
           </a>
         </li>
 

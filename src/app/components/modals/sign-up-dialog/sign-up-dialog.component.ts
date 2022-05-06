@@ -3,7 +3,7 @@ import {DialogRef} from '@angular/cdk-experimental/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DialogService} from '@services/dialog.service';
 import {SignInDialogComponent} from '@components/modals/sign-in-dialog/sign-in-dialog.component';
-import {UserSignUpDto} from '../../../dtos/userSignUpDto';
+import {UserSignUpDto} from '../../../dto/userSignUpDto';
 import {UserService} from '@services/user.service';
 import {
   SignInForPartnersDialogComponent

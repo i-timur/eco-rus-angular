@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserSignUpDto} from '../dtos/userSignUpDto';
-import {Observable} from 'rxjs';
+import {UserSignUpDto} from '../dto/userSignUpDto';
+import {map, Observable} from 'rxjs';
+import {UserDto} from '../dto/userDto';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,12 @@ export class UserService {
 
   signUp(user: UserSignUpDto): Observable<any> {
     return this.http.post(
-      'https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/account',
+      'account',
       user
     )
+  }
+
+  getUser(): Observable<UserDto> {
+    return this.http.get<UserDto>('profile');
   }
 }

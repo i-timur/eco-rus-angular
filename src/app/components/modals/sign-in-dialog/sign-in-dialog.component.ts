@@ -1,7 +1,7 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DialogRef} from '@angular/cdk-experimental/dialog';
-import {UserAuthDto} from '../../../dtos/userAuthDto';
+import {UserAuthDto} from '../../../dto/userAuthDto';
 import {AuthService} from '@services/auth.service';
 import {DialogService} from '@services/dialog.service';
 import {SignUpDialogComponent} from '@components/modals/sign-up-dialog/sign-up-dialog.component';

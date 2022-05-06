@@ -23,11 +23,13 @@ import {DialogModule} from '@angular/cdk-experimental/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BtnComponent } from './components/ui/btn/btn.component';
 import { TextBtnComponent } from './components/ui/text-btn/text-btn.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { SignUpDialogComponent } from './components/modals/sign-up-dialog/sign-up-dialog.component';
 import { SignInWithPhoneComponent } from './components/modals/sign-in-with-phone/sign-in-with-phone.component';
 import { EnterCodeDialogComponent } from './components/modals/enter-code-dialog/enter-code-dialog.component';
 import { SignInForPartnersDialogComponent } from './components/modals/sign-in-for-partners-dialog/sign-in-for-partners-dialog.component';
+import {UrlInterceptorService} from '@services/url-interceptor.service';
+import {AuthInterceptorService} from '@services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,18 @@ import { SignInForPartnersDialogComponent } from './components/modals/sign-in-fo
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UrlInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
