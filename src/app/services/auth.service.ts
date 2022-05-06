@@ -9,6 +9,7 @@ import {BehaviorSubject, Observable, tap} from 'rxjs';
 export class AuthService {
 
   private _isAuthed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!!this.token);
+
   readonly isAuthed$ = this._isAuthed.asObservable();
 
   constructor(private http: HttpClient) { }

@@ -3,7 +3,7 @@
     <div class='navbar__logo'>
       <a routerLink="/">
         <img
-          src='../../../assets/images/navbar/logo.svg'
+          src='/assets/images/navbar/logo.svg'
           alt='logo'
         />
       </a>
@@ -11,7 +11,7 @@
     <div class="navbar__logo-mobile">
       <a routerLink="/">
         <img
-          src="../../../assets/images/navbar/logo-mobile.svg"
+          src="/assets/images/navbar/logo-mobile.svg"
           alt="logo"
         />
       </a>
@@ -60,43 +60,46 @@
     <ul class='navbar__user user-navbar'>
       <li class='user-navbar__city'>
         <button class='user-navbar__button'>
-          <img src="../../../assets/icons/pin.svg" alt="ping"/>
+          <img src="/assets/icons/pin.svg" alt="ping"/>
           Казань
         </button>
       </li>
 
-      <ng-container *ngIf="isAuthed$ | async; else notAuthed">
+      <ng-container *ngIf="isAuthed; else notAuthed">
+
         <li class='user-navbar__balance'>
           <a
-            [routerLink]="['/profile', user.id]"
+            [routerLink]="['/profile', user?.id]"
             class="user-navbar__link"
           >
-            <img src="../../../assets/icons/eco-dollar.svg" alt='eco-dollar'/>
-            {{user.balance}}
+            <img src="/assets/icons/eco-dollar.svg" alt='eco-dollar'/>
+            {{user?.balance}}
           </a>
         </li>
         <li class='user-navbar__item'>
           <a
-            [routerLink]="['/profile', user.id]"
+            [routerLink]="['/profile', user?.id]"
             class="user-navbar__link"
           >
-            <img src="../../../assets/images/navbar/profile-image-s.svg" alt='avatar'/>
-            <span class="user-navbar__user-name">{{user.username}}</span>
+            <img src="/assets/images/navbar/profile-image-s.svg" alt='avatar'/>
+            <span class="user-navbar__user-name">{{user?.username}}</span>
           </a>
         </li>
 
       </ng-container>
 
       <ng-template #notAuthed>
+
         <li class='user-navbar__item'>
           <button
             class='user-navbar__button'
             (click)="openSignInDialog()"
           >
-            <img src="../../../assets/icons/login.svg" alt="login"/>
+            <img src="/assets/icons/login.svg" alt="login"/>
             Войти
           </button>
         </li>
+
       </ng-template>
 
     </ul>

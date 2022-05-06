@@ -1,7 +1,21 @@
+@import "mixins";
+
 .slide {
   min-height: 375px;
   display: flex;
   justify-content: space-between;
+
+  &--green {
+    background: #B3EDC8;
+  }
+
+  &--orange {
+    background: #FFE48F;
+  }
+
+  &--mint {
+    background: #BFF0DE;
+  }
 
   @media (max-width: 959px) {
     flex-direction: column;
@@ -46,7 +60,7 @@
     font-weight: 700;
     font-size: 48px;
     line-height: calc(56 / 48 * 100%);
-    color: #000B26;
+    color: $c-base-100;
 
     @media (max-width: 769px) {
       font-size: 24px;
@@ -58,16 +72,20 @@
     font-weight: 400;
     font-size: 16px;
     line-height: calc(24 / 16 * 100%);
-    color: rgba(0, 11, 38, 0.8);
+    color: $c-base-80;
   }
 
   &__button {
-    display: inline-block;
+    min-width: 179px;
     margin: 40px 0 0 0;
 
     @media (max-width: 959px) {
       display: block;
       width: 100%;
     }
+  }
+
+  &__link {
+    padding: 0 24px;
   }
 }

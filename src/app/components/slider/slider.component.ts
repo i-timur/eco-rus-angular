@@ -1,27 +1,40 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import SwiperCore, {Autoplay, Navigation, SwiperOptions} from 'swiper';
+import {Theme} from '@components/slide/slide.component';
 
-const _slides = [
+interface Slide {
+  theme: Theme;
+  title: string;
+  subtitle: string;
+  buttonValue: string;
+  buttonTo: string;
+  image: string;
+}
+
+const _slides: Slide[] = [
   {
     title: 'Сделаем мир чище',
-    subtitle: 'Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов',
+    subtitle: 'Сдай макулатуру или старую одежду и&nbsp;получи скидку на&nbsp;покупку товаров из&nbsp;переработанных материалов',
     buttonValue: 'Условия сервиса',
     buttonTo: '/',
-    image: '../../../assets/images/home/recycle.png',
+    image: '/assets/images/home/recycle.png',
+    theme: 'green'
   },
   {
     title: 'А вы знали...',
-    subtitle: 'что среднее время разложения пластмассовых изделий колеблется от 400 до 700 лет, а полиэтиленовых пакетов — от 100 до 200 лет?',
+    subtitle: 'что среднее время разложения пластмассовых изделий колеблется от&nbsp;400 до&nbsp;700&nbsp;лет, а&nbsp;полиэтиленовых пакетов&nbsp;&mdash; от&nbsp;100 до&nbsp;200&nbsp;лет?',
     buttonValue: 'Условия сервиса',
     buttonTo: '/',
-    image: '../../../assets/images/home/plastic.png',
+    image: '/assets/images/home/plastic.png',
+    theme: 'orange'
   },
   {
     title: 'Что с масками?',
-    subtitle: 'Медицинские маски не обязательно должны становиться отходами. Их тоже можно сдать на переработку.',
+    subtitle: 'Медицинские маски не&nbsp;обязательно должны становиться отходами. Их&nbsp;тоже можно сдать на&nbsp;переработку.',
     buttonValue: 'Условия сервиса',
     buttonTo: '/',
-    image: '../../../assets/images/home/masks.png',
+    image: '/assets/images/home/masks.png',
+    theme: 'mint'
   },
 ];
 
@@ -33,7 +46,7 @@ SwiperCore.use([Navigation, Autoplay]);
   styleUrls: ['./slider.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
 
   config: SwiperOptions = {
     navigation: true,
@@ -43,10 +56,4 @@ export class SliderComponent implements OnInit {
   };
 
   slides =  _slides;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

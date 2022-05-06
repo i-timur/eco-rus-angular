@@ -1,16 +1,15 @@
 <div class="slider">
   <div class="slider__container">
     <swiper [config]="config">
-      <ng-container *ngFor="let slide of slides; index as index">
+      <ng-container *ngFor="let slide of slides">
         <ng-template swiperSlide>
           <app-slide
-            [index]="index"
+            [theme]="slide.theme"
             [title]="slide.title"
-            [subtitle]="slide.subtitle"
             [buttonValue]="slide.buttonValue"
             [buttonTo]="slide.buttonTo"
             [image]="slide.image"
-          ></app-slide>
+          ><span subtitle [innerHTML]="slide.subtitle | safeHtml"></span></app-slide>
         </ng-template>
       </ng-container>
     </swiper>

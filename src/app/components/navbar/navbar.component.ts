@@ -1,8 +1,8 @@
-import {Component, ChangeDetectionStrategy, OnInit, OnDestroy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, OnInit, OnDestroy, ChangeDetectorRef} from '@angular/core';
 import {AuthService} from '@services/auth.service';
 import {DialogService} from '@services/dialog.service';
 import {SignInDialogComponent} from '@components/modals/sign-in-dialog/sign-in-dialog.component';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {UserDto} from '../../dto/userDto';
 import {UserService} from '@services/user.service';
 
@@ -14,26 +14,33 @@ import {UserService} from '@services/user.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  isAuthed$!: Observable<boolean>;
+  isAuthed?: boolean;
+  user?: UserDto;
 
-  user!: UserDto;
-  userSub!: Subscription;
+  isAuthedSub?: Subscription;
+  userSub?: Subscription;
 
   constructor(
     public authService: AuthService,
     private dialogService: DialogService,
-    private userService: UserService
+    private userService: UserService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    this.isAuthed$ = this.authService.isAuthed$;
-    this.userSub = this.userService.getUser().subscribe((user) => {
-      this.user = user;
+    this.isAuthedSub = this.authService.isAuthed$.subscribe((isAuthed) => {
+      this.isAuthed = isAuthed;
+      this.cdr.markForCheck();
+      this.userSub = this.userService.getUser()?.subscribe((user) => {
+        this.user = user;
+        this.cdr.markForCheck();
+      });
     });
   }
 
   ngOnDestroy(): void {
-    this.userSub.unsubscribe();
+    this.isAuthedSub?.unsubscribe();
+    this.userSub?.unsubscribe();
   }
 
   openSignInDialog() {

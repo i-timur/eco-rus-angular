@@ -1,11 +1,22 @@
-<div class="slide {{bgColor}}">
+<div
+  class="slide"
+  [class.slide--green]="theme === 'green'"
+  [class.slide--orange]="theme === 'orange'"
+  [class.slide--mint]="theme === 'mint'"
+>
   <div class='slide__content'>
     <div class="slide__upper">
       <h1 class='slide__title'>{{title}}</h1>
-      <h3 class='slide__subtitle'>{{subtitle}}</h3>
+      <h3 class='slide__subtitle'><ng-content select="[subtitle]"></ng-content></h3>
     </div>
-    <div class='slide__button'>
-      <app-slide-btn></app-slide-btn>
+    <div class="slide__button">
+      <a
+        app-btn
+        color="primary"
+        size="sm"
+        class="slide__link"
+        [routerLink]="buttonTo"
+      >{{buttonValue}}</a>
     </div>
   </div>
   <div class='slide__image'>

@@ -1,5 +1,6 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
-import {getSlideBackgroundColor} from '@utils/index';
+import {Component, ChangeDetectionStrategy, Input} from '@angular/core';
+
+export type Theme = 'green' | 'orange' | 'mint';
 
 @Component({
   selector: 'app-slide',
@@ -7,21 +8,10 @@ import {getSlideBackgroundColor} from '@utils/index';
   styleUrls: ['./slide.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SlideComponent implements OnInit {
-
-  @Input() index!: number;
+export class SlideComponent {
+  @Input() theme!: Theme;
   @Input() title!: string;
-  @Input() subtitle!: string;
   @Input() buttonValue!: string;
   @Input() buttonTo!: string;
   @Input() image!: string;
-
-  bgColor!: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.bgColor = getSlideBackgroundColor(this.index);
-  }
-
 }

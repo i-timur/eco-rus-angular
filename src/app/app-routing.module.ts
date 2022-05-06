@@ -4,13 +4,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from '@components/main-layout/main-layout.component';
 import {HomeComponent} from '@pages/home/home.component';
 import {MarketComponent} from '@pages/market/market.component';
+import {MapComponent} from '@pages/map/map.component';
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: HomeComponent},
-      {path: 'market', component: MarketComponent}
+      {path: 'market', component: MarketComponent},
+      {path: 'map', component: MapComponent}
     ]
   }
 ];
@@ -19,5 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

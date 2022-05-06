@@ -1,6 +1,8 @@
+@import "mixins";
+
 .footer {
-  background: #FFFFFF;
-  box-shadow: 0px -0.5px 0px rgba(0, 0, 0, 0.12);
+  background: white;
+  box-shadow: 0px -0.5px 0px rgba(black, 0.12);
 
   &__container {
     display: flex;
@@ -35,6 +37,6 @@
     column-gap: 4px;
     font-size: 16px;
     line-height: 22px;
-    color: rgba(0, 11, 38, 0.64);
+    color: $c-base-64;
   }
 }

@@ -1,3 +1,5 @@
+@import "mixins";
+
 .modal-enter-code {
   &__container {
     width: 480px;
@@ -17,11 +19,11 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 32px;
-    color: rgba(0, 11, 38, 0.88);
+    color: $c-base-88;
   }
 
   &__close {
-    background-color:#FFFFFF;
+    background-color: white;
     cursor: pointer;
   }
 
@@ -33,11 +35,11 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-    color: rgba(0, 11, 38, 0.64);
+    color: $c-base-64;
   }
 
   &__phone-number {
-    color: #07C88E;
+    color: $c-primary;
   }
 
   &__input {
@@ -49,7 +51,7 @@
     margin: 8px 0 0 16px;
     font-size: 14px;
     line-height: 20px;
-    color: #FF4545;
+    color: $c-red;
   }
 
   &__send-button {

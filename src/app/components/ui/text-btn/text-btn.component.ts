@@ -6,5 +6,4 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
   styleUrls: ['./text-btn.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TextBtnComponent {
-}
+export class TextBtnComponent {}

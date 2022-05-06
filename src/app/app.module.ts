@@ -13,7 +13,6 @@ import { MapComponent } from './pages/map/map.component';
 import {SwiperModule} from 'swiper/angular';
 import { SliderComponent } from './components/slider/slider.component';
 import { SlideComponent } from './components/slide/slide.component';
-import { SlideBtnComponent } from './components/ui/slide-btn/slide-btn.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
 import { ModalContainerComponent } from './components/modals/modal-container/modal-container.component';
 import {PortalModule} from '@angular/cdk/portal';
@@ -30,6 +29,7 @@ import { EnterCodeDialogComponent } from './components/modals/enter-code-dialog/
 import { SignInForPartnersDialogComponent } from './components/modals/sign-in-for-partners-dialog/sign-in-for-partners-dialog.component';
 import {UrlInterceptorService} from '@services/url-interceptor.service';
 import {AuthInterceptorService} from '@services/auth-interceptor.service';
+import { SafeHtmlPipe } from './components/pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import {AuthInterceptorService} from '@services/auth-interceptor.service';
     MapComponent,
     SliderComponent,
     SlideComponent,
-    SlideBtnComponent,
     HomeCardComponent,
     ModalContainerComponent,
     SignInDialogComponent,
@@ -52,7 +51,8 @@ import {AuthInterceptorService} from '@services/auth-interceptor.service';
     SignUpDialogComponent,
     SignInWithPhoneComponent,
     EnterCodeDialogComponent,
-    SignInForPartnersDialogComponent
+    SignInForPartnersDialogComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
