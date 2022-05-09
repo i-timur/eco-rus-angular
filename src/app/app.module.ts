@@ -30,6 +30,10 @@ import { SignInForPartnersDialogComponent } from './components/modals/sign-in-fo
 import {UrlInterceptorService} from '@services/url-interceptor.service';
 import {AuthInterceptorService} from '@services/auth-interceptor.service';
 import { SafeHtmlPipe } from './components/pipes/safe-html.pipe';
+import { CheckboxGroupComponent } from './components/checkbox-group/checkbox-group.component';
+import { OrderBtnComponent } from './components/ui/order-btn/order-btn.component';
+import { QrCodeDialogComponent } from './components/modals/qr-code-dialog/qr-code-dialog.component';
+import { MarketCardComponent } from './components/market-card/market-card.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { SafeHtmlPipe } from './components/pipes/safe-html.pipe';
     SignInWithPhoneComponent,
     EnterCodeDialogComponent,
     SignInForPartnersDialogComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    CheckboxGroupComponent,
+    OrderBtnComponent,
+    QrCodeDialogComponent,
+    MarketCardComponent
   ],
   imports: [
     BrowserModule,

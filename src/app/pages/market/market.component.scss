@@ -1,0 +1,246 @@
+.market {
+  &__container {
+    margin: 0 0 61px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    margin: 120px 0 0 0;
+
+    @media (max-width: 570px) {
+      margin: 88px 0 0 0;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    margin: 40px 0 0 0;
+
+    @media (max-width: 570px) {
+      margin: 32px 0 0 0;
+    }
+  }
+}
+
+.header-market {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 24px;
+
+    @media (max-width: 570px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+
+    @media (max-width: 570px) {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    @media (max-width: 959px) {
+      display: none;
+    }
+
+    @media (max-width: 570px) {
+      row-gap: 32px;
+    }
+  }
+
+  &__mobile-filter-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    width: 40%;
+    min-height:48px;
+    background: rgba(62, 80, 114, 0.08);
+    border-radius: 8px;
+
+    @media (max-width: 959px) {
+      display: flex;
+    }
+
+    @media (max-width: 570px) {
+      width: 100%;
+    }
+  }
+}
+
+.content-market {
+  &__container {
+    display: flex;
+  }
+
+  &__filter {
+    flex: 0 1 282px;
+    min-width: 282px;
+  }
+
+  &__cards {
+    width: 100%;
+    margin: 0 0 0 47px;
+
+    @media (max-width: 959px) {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    margin: 0 -12px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+
+  &__item {
+    padding: 0 12px;
+    flex: 0 1 33.333%;
+
+    @media (max-width: 1200px) {
+      flex: 0 1 50%;
+    }
+
+    @media (max-width: 570px) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__first-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(62, 80, 114, 0.12);
+    box-shadow: 0px 12px 32px rgba(121, 121, 121, 0.12), 0px 4px 24px rgba(21, 45, 103, 0.12);
+    border-radius: 16px;
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 130px 0 0 0;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: #000000;
+  }
+
+  &__balance-amout {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+  }
+
+  &__change {
+    margin: 8px 0 0 0;
+    text-align: center;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    color: rgba(0, 11, 38, 0.56);
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px 0 0 0;
+    padding: 10px 0;
+    background: #07C88E;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
+}
+
+.filter-market-content {
+  background: #FFFFFF;
+
+  @media (max-width: 959px) {
+    display: none;
+  }
+
+  &__container {
+    position: sticky;
+    top: 85px;
+  }
+
+  &__menu {
+    padding: 24px;
+    border: 1px solid rgba(62, 80, 114, 0.16);
+    border-radius: 16px;
+
+    @media (max-width: 959px) {
+      border: 0;
+      padding: 39px 24px;
+    }
+  }
+
+  &__reset-btn {
+    margin: 23px 0 0 0;
+  }
+
+  &__mobile-order-btns {
+    display: flex;
+    column-gap: 12px;
+    overflow: auto;
+  }
+
+  &__menu-item {
+    &:not(:first-child) {
+      margin: 24px 0 0 0;
+    }
+  }
+
+  &__menu-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 11, 38, 0.8);
+  }
+
+  &__options {
+    margin: 16px 0 0 0;
+  }
+
+  &__btns {
+    margin: 23px 0 0 0;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+    color: rgba(0, 11, 38, 0.8);
+    background: rgba(62, 80, 114, 0.08);
+    border-radius: 8px;
+  }
+}

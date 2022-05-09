@@ -1,0 +1,42 @@
+@import "mixins";
+
+.filter-checkbox {
+  margin: 12px 0 0 0;
+
+  &__input {
+    display: block;
+    width: 18px;
+    height: 20px;
+
+    &_checked {
+      opacity: 0;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 9px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $c-base-72;
+
+    &_checked {
+      font-weight: 500;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url('../../../assets/icons/checked.svg') center center no-repeat;
+        z-index: 10;
+      }
+    }
+  }
+}

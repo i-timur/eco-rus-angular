@@ -1,1 +1,128 @@
-<p>market works!</p>
+<div class='market'>
+  <div class='market__container'>
+
+    <div class='market__header header-market'>
+      <div class='header-market__container container'>
+        <h1 class='header-market__title'>ЭкоМаркет</h1>
+
+        <ul class='header-market__list'>
+
+          <li class='header-market__item'>
+            <button
+              app-order-btn
+              type="button"
+              [isActive]="order === 'popular'"
+              (click)="order = 'popular'"
+            >По популярности</button>
+          </li>
+
+          <li class='header-market__item'>
+            <button
+              app-order-btn
+              type="button"
+              [isActive]="order === 'price'"
+              (click)="order = 'price'"
+            >По цене</button>
+          </li>
+
+          <li class='header-market__item'>
+            <button
+              app-order-btn
+              type="button"
+              [isActive]="order === 'date'"
+              (click)="order = 'date'"
+            >По новизне</button>
+          </li>
+
+        </ul>
+
+        <button
+          class="header-market__mobile-filter-button"
+        >Фильтры</button>
+      </div>
+    </div>
+
+    <div class='market__content content-market'>
+      <div class='content-market__container container'>
+
+        <div class="content-market__filter filter-market-content">
+          <div class='filter-market-content__container'>
+
+            <div class='filter-market-content__menu'>
+
+              <div class='filter-market-content__menu-item'>
+                <h4 class='filter-market-content__menu-title'>Пол</h4>
+                <div class='filter-market-content__options'>
+                  <app-checkbox-group [options]="sexes"></app-checkbox-group>
+                </div>
+              </div>
+
+              <div class='filter-market-content__menu-item'>
+                <h4 class='filter-market-content__menu-title'>Тип товара</h4>
+                <div class='filter-market-content__options'>
+                  <app-checkbox-group [options]="itemCategories" (toggle)="onItemCategoriesChange($event)"></app-checkbox-group>
+                </div>
+              </div>
+
+              <div class='filter-market-content__menu-item'>
+                <h4 class='filter-market-content__menu-title'>Брэнд</h4>
+                <div class='filter-market-content__options'>
+                  <app-checkbox-group [options]="brands" (toggle)="onBrandChange($event)"></app-checkbox-group>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="filter-market-content__reset-btn">
+              <button
+                app-btn
+                color="secondary"
+                size="sm"
+                (click)="resetFilter()"
+              >Сбросить фильтры</button>
+            </div>
+          </div>
+        </div>
+
+        <div class='content-market__cards'>
+          <ul class='content-market__list'>
+
+            <li class='content-market__item'>
+              <div class='content-market__first-card'>
+                <p class='content-market__balance'>
+                  На вашем балансе&nbsp;
+                  <img src="/assets/icons/eco-dollar.svg" alt='eco-dollar'/>&nbsp;
+                  <span class='content-market__balance-amount'>200</span>
+                </p>
+                <p class='content-market__change'>
+                  Вы можете обменять их на скидку 200 руб.
+                </p>
+                <button
+                  class='content-market__button'
+                  type='button'
+                  (click)="openQrCodeDialog()"
+                >Получить промокод</button>
+              </div>
+            </li>
+
+            <li class='content-market__item' *ngFor="let item of cards">
+              <div class='content-market__card'>
+                <a [routerLink]="['/item', item.id]">
+                 <app-market-card
+                  [image]="item.image"
+                  [name]="item.name"
+                  [brand]="item.brand"
+                  [category]="item.category"
+                  [price]="item.price"
+                 ></app-market-card>
+                </a>
+               </div>
+             </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

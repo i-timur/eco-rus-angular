@@ -1,0 +1,32 @@
+<div class='modal-qr-code'>
+  <div class='modal-qr-code__container'>
+
+    <h2 class='modal-qr-code__title'>
+      QR-код на покупку создан
+    </h2>
+
+    <p class='modal-qr-code__info'>
+      При оплате покажите его сотруднику на кассе
+    </p>
+
+    <div class='modal-qr-code__image'>
+      <img src="/assets/images/market/qr-code.png" alt='qr-code' />
+    </div>
+
+    <p class='modal-qr-code__code'>E25GHR0P</p>
+
+    <p class='modal-qr-code__info'>
+      Если не получается отсканировать QR-код, введите код вручную или продиктуйте сотриднику на кассе
+    </p>
+
+    <div class='modal-qr-code__close'>
+      <button
+        app-btn
+        color="primary"
+        size="m"
+        (click)="close()"
+      >Закрыть</button>
+    </div>
+
+  </div>
+</div>
