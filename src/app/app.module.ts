@@ -29,11 +29,22 @@ import { EnterCodeDialogComponent } from './components/modals/enter-code-dialog/
 import { SignInForPartnersDialogComponent } from './components/modals/sign-in-for-partners-dialog/sign-in-for-partners-dialog.component';
 import {UrlInterceptorService} from '@services/url-interceptor.service';
 import {AuthInterceptorService} from '@services/auth-interceptor.service';
-import { SafeHtmlPipe } from './components/pipes/safe-html.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { CheckboxGroupComponent } from './components/checkbox-group/checkbox-group.component';
 import { OrderBtnComponent } from './components/ui/order-btn/order-btn.component';
 import { QrCodeDialogComponent } from './components/modals/qr-code-dialog/qr-code-dialog.component';
 import { MarketCardComponent } from './components/market-card/market-card.component';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import { MapContainerComponent } from './components/map-container/map-container.component';
+import { MinorLayoutComponent } from './components/minor-layout/minor-layout.component';
+import { SearchBarComponent } from './components/ui/search-bar/search-bar.component';
+import { DropdownComponent } from './components/ui/dropdown/dropdown.component';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {A11yModule} from '@angular/cdk/a11y';
+import { MapCardComponent } from './components/map-card/map-card.component';
+import { MapCardsComponent } from './components/map-cards/map-cards.component';
+import { MapCardDetailsComponent } from './components/map-card-details/map-card-details.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +71,15 @@ import { MarketCardComponent } from './components/market-card/market-card.compon
     CheckboxGroupComponent,
     OrderBtnComponent,
     QrCodeDialogComponent,
-    MarketCardComponent
+    MarketCardComponent,
+    MapContainerComponent,
+    MinorLayoutComponent,
+    SearchBarComponent,
+    DropdownComponent,
+    MapCardComponent,
+    MapCardsComponent,
+    MapCardDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +90,10 @@ import { MarketCardComponent } from './components/market-card/market-card.compon
     PortalModule,
     DialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule,
+    OverlayModule,
+    A11yModule
   ],
   providers: [
     {

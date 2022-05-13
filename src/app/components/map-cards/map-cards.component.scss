@@ -1,0 +1,7 @@
+.map-cards {
+  &__card {
+    &:not(:first-child) {
+      margin: 8px 0 0 0;
+    }
+  }
+}

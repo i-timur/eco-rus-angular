@@ -1,1 +1,50 @@
-<p>map works!</p>
+<div class="map">
+  <div class="map__container">
+
+    <div class="map__map-component">
+      <app-map-container></app-map-container>
+    </div>
+
+    <div class="map__controls controls-map">
+      <div class="controls-map__container container">
+        <div class="controls-map__search-bar">
+          <app-search-bar></app-search-bar>
+        </div>
+
+        <button class="controls-map__mobile-filter-settings">
+          <img src="assets/icons/filter.svg" alt="filters" />
+        </button>
+
+        <div class="controls-map__select">
+          <app-dropdown
+            [title]="shopsTitle"
+            [isOpen]="isShopsOpen"
+            [touched]="shopsTouched"
+          >
+            <app-checkbox-group [options]="shops" (toggle)="onShopsChange($event)"></app-checkbox-group>
+          </app-dropdown>
+        </div>
+
+        <div class="controls-map__select">
+          <app-dropdown
+            [title]="materialsTitle"
+            [isOpen]="isMaterialsOpen"
+            [touched]="materialsTouched"
+          >
+            <app-checkbox-group [options]="materials" (toggle)="onMaterialsChange($event)"></app-checkbox-group>
+          </app-dropdown>
+        </div>
+
+      </div>
+    </div>
+
+        <div class="map__cards cards-map">
+          <div class="cards-map__container">
+
+            <router-outlet></router-outlet>
+
+          </div>
+        </div>
+
+  </div>
+</div>

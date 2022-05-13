@@ -1,7 +1,11 @@
 @import "mixins";
 
 .filter-checkbox {
-  margin: 12px 0 0 0;
+  width: 100%;
+
+  &:not(:first-child) {
+    margin: 12px 0 0 0;
+  }
 
   &__input {
     display: block;

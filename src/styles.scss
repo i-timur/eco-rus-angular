@@ -105,3 +105,16 @@ html, body {
     display: none;
   }
 }
+
+.leaflet-container {
+  width: 100%;
+  height: calc(100vh - 81px);
+}
+
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-bottom {
+  z-index: 1 !important;
+}

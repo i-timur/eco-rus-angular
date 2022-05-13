@@ -1,0 +1,13 @@
+<div class="map-cards">
+  <div class="map-cards__container">
+    <div class="map-cards__card" *ngFor="let card of cards">
+      <a [routerLink]="['/map', 'details', card.id]">
+        <app-map-card
+          [address]="card.address"
+          [text]="card.text"
+          [image]="card.image"
+        ></app-map-card>
+      </a>
+    </div>
+  </div>
+</div>

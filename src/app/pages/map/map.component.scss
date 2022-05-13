@@ -1,0 +1,110 @@
+@import "mixins";
+
+.map {
+  &__container {
+    position: relative;
+    margin: 81px 0 0 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__controls {
+    position: absolute;
+    top: 32px;
+    left: calc((100% - 1200px) / 2);
+    width: 1200px;
+    z-index: 2;
+
+    @media (max-width: 1200px) {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &__cards {
+    position: absolute;
+    top: 112px;
+    left: calc((100% - 1200px) / 2);
+    max-width: 384px;
+    max-height: calc(100vh - 81px - 112px);
+    overflow: hidden;
+    overflow-y: scroll;
+    z-index: 1000;
+
+
+    @media (max-width: 1200px) {
+      width: 384px;
+      left: 0;
+    }
+
+    @media (max-width: 959px) {
+      display: none;
+    }
+  }
+
+  &__mobile-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.controls-map {
+  &__container {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__search-bar {
+    flex: 1 1 600px;
+
+    @media (max-width: 769px) {
+      width: 100%;
+    }
+  }
+
+  &__mobile-filter-settings {
+    display: none;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(21, 45, 103, 0.12);
+    border-radius: 8px;
+
+    @media (max-width: 769px) {
+      display: block;
+    }
+  }
+
+  &__select {
+    flex: 1 1 280px;
+
+    @media (max-width: 769px) {
+      display: none;
+    }
+  }
+
+  &__select-placeholder {
+    color: $c-base-48;
+  }
+}
+
+.cards-map {
+  &__container {
+    @media (max-width: 1220px) {
+      padding: 0 0 0 10px;
+    }
+  }
+
+  &__card {
+    width: 384px;
+
+    &:not(:first-child) {
+      margin: 8px 0 0 0;
+    }
+  }
+}

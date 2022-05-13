@@ -1,0 +1,106 @@
+@import "mixins";
+
+.map-card-details {
+  overflow: hidden;
+
+  @media (max-width: 959px) {
+    position: relative;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+  }
+
+  &__container {
+    width: 384px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+    color: #5780EA;
+  }
+
+  &__content {
+    margin: 16px 0 0 0;
+    border: 1px solid rgba(62, 80, 114, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &__text {
+    padding: 24px;
+    background: white;
+  }
+
+  &__address {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $c-base-88;
+  }
+
+  &__phone-number {
+    margin: 12px 0 0 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: $c-base-88;
+  }
+
+  &__schedule {
+    margin: 24px 0 0 0;
+  }
+
+  &__requirement {
+    margin: 24px 0 0 0;
+  }
+}
+
+.schedule {
+  &__item {
+    display: flex;
+    column-gap: 12px;
+    font-size: 16px;
+    line-height: 20px;
+    color: $c-base-88;
+
+    &:not(:first-child) {
+      margin: 4px 0 0 0;
+    }
+  }
+}
+
+.requirement {
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $c-base-88;
+  }
+
+  &__badges {
+    margin: 8px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 8px;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    background: rgba(62, 80, 114, 0.08);
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: $c-base-72;
+  }
+}

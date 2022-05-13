@@ -1,0 +1,26 @@
+@import "mixins";
+
+:host {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(21, 45, 103, 0.12);
+  border-radius: 8px;
+
+  .input {
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 20px;
+      color: $c-base-48;
+    }
+  }
+}

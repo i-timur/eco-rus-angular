@@ -1,0 +1,21 @@
+<div
+  class="dropdown"
+  cdkOverlayOrigin #originOverlay="cdkOverlayOrigin"
+  (click)="onToggle()"
+>
+  <span class="dropdown__title" [class.dropdown__title_touched]="touched">{{title}}</span>
+  <img src="assets/icons/arrow-down.svg" alt="dropdown" />
+</div>
+<ng-template
+  class="dropdown__panel"
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="originOverlay"
+  [cdkConnectedOverlayOpen]="_isOpen"
+  [cdkConnectedOverlayOffsetY]="8"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+>
+  <div class="dropdown__panel">
+    <ng-content></ng-content>
+  </div>
+</ng-template>

@@ -1,0 +1,33 @@
+@import "mixins";
+
+.map-card {
+  &__container {
+    display: flex;
+    column-gap: 16px;
+    padding: 16px;
+    border: 1px solid rgba(62, 80, 114, 0.12);
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 24px $c-base-12;
+  }
+
+  &__image {
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__address {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $c-base-88;
+  }
+
+  &__text {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: $c-base-48;
+  }
+}

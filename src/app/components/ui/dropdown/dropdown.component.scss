@@ -1,0 +1,36 @@
+@import "mixins";
+
+$dropdown-panel-width: 315px;
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px 14px 20px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(21, 45, 103, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000000;
+
+  &__title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-base-48;
+  }
+
+  &__title_touched {
+    color: $c-base-100;
+  }
+
+  &__panel {
+    width: $dropdown-panel-width;
+    padding: 10px 21px;
+    border-radius: 12px;
+    background: white;
+  }
+}
