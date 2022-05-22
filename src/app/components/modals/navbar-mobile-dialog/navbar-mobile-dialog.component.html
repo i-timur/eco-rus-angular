@@ -1,0 +1,74 @@
+<div class="side-menu-navbar">
+  <div class="side-menu-navbar__container">
+    <div class="side-menu-navbar__upper">
+      <div
+        class="side-menu-navbar__close"
+        (click)="close()"
+      >
+        <img src="/assets/icons/close.svg" alt="close"/>
+      </div>
+      <div
+        class="side-menu-navbar__user-info user-info-navbar"
+        [style.display]="isAuthed ? null : 'none'"
+      >
+        <div class="user-info-navbar__avatar">
+          <a
+            (click)="close()"
+            [routerLink]="['/profile', user?.id]"
+          >
+            <img src="/assets/images/navbar/profile-image-m.svg" alt="Аватар" />
+          </a>
+        </div>
+        <div class="user-info-navbar__text">
+          <a
+            (click)="close()"
+            [routerLink]="['/profile', user?.id]"
+            class="user-info-navbar__name"
+          >{{user?.username}}</a>
+          <div class="user-info-navbar__balance">
+            <img src="/assets/icons/eco-dollar.svg" alt="Эко монета" />
+            <span class="user-info-navbar__balance-amount">{{user?.balance}}</span>
+          </div>
+        </div>
+      </div>
+      <nav class="side-menu-navbar__navigation navigation-side-menu-navbar">
+        <ul class="navigation-side-menu-navbar__list">
+          <li class="navigation-side-menu-navbar__item">
+            <a
+              routerLink="/"
+              class="navigation-side-menu-navbar__link"
+              (click)="close()"
+            >Главная</a>
+          </li>
+          <li class="navigation-side-menu-navbar__item">
+            <a
+              routerLink="/map"
+              class="navigation-side-menu-navbar__link"
+              (click)="close()"
+            >Пункты сбора</a>
+          </li>
+          <li class="navigation-side-menu-navbar__item">
+            <a
+              routerLink="/market"
+              class="navigation-side-menu-navbar__link"
+              (click)="close()"
+            >ЭкоМаркет</a>
+          </li>
+          <li class="navigation-side-menu-navbar__item">
+            <a
+              routerLink="/about"
+              class="navigation-side-menu-navbar__link"
+              (click)="close()"
+            >О сервисе</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="side-menu-navbar__bottom">
+      <button class="side-menu-navbar__city" type="button">
+        <img src="/assets/icons/pin.svg" alt="Местоположение"/>
+        Казань
+      </button>
+    </div>
+  </div>
+</div>

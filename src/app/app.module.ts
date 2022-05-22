@@ -45,6 +45,12 @@ import { MapCardComponent } from './components/map-card/map-card.component';
 import { MapCardsComponent } from './components/map-cards/map-cards.component';
 import { MapCardDetailsComponent } from './components/map-card-details/map-card-details.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UserPromoCodesComponent } from './components/user-promo-codes/user-promo-codes.component';
+import { UserHistoryComponent } from './components/user-history/user-history.component';
+import { HistoryItemComponent } from './components/history-item/history-item.component';
+import { MaterialPipe } from './pipes/material.pipe';
+import { UserPromoCodeComponent } from './components/user-promo-code/user-promo-code.component';
+import { NavbarMobileDialogComponent } from './components/modals/navbar-mobile-dialog/navbar-mobile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +85,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MapCardComponent,
     MapCardsComponent,
     MapCardDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserPromoCodesComponent,
+    UserHistoryComponent,
+    HistoryItemComponent,
+    MaterialPipe,
+    UserPromoCodeComponent,
+    NavbarMobileDialogComponent
   ],
   imports: [
     BrowserModule,

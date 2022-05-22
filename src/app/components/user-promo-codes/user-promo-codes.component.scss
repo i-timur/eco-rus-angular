@@ -1,0 +1,12 @@
+.user-promo-codes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  &__promo-code {
+    &:not(:first-child) {
+      padding: 24px 0 0 0;
+      border-top: 1px solid rgba(black, 0.12);
+    }
+  }
+}

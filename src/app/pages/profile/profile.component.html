@@ -1,1 +1,46 @@
-<p>profile works!</p>
+<section class="profile-page">
+  <div class="profile-page__container container">
+    <h1 class="profile-page__title">Личный кабинет</h1>
+    <div class="profile-page__main">
+      <div class="profile-page__user-info user-info">
+        <div class="user-info__img">
+          <img src="assets/images/profile/avatar.png" alt="avatar" />
+        </div>
+        <div class="user-info__name" *ngIf="user">{{user.firstName}} {{user.lastName}}</div>
+        <ul class="user-info__contacts" *ngIf="user">
+          <li class="user-info__contact" *ngIf="user.phoneNumber">{{user.phoneNumber}}</li>
+          <li class="user-info__contact" *ngIf="user.email">{{user.email}}</li>
+        </ul>
+        <button
+          app-btn
+          type="button"
+          className="user-info__edit-btn"
+          color="secondary"
+          size="m"
+        >Редактировать</button>
+      </div>
+      <div class="profile-page__content content">
+        <nav class="content__navigation" *ngIf="user">
+          <ul class="content__list">
+            <li
+              class="content__item"
+              routerLinkActive="content__item_active"
+              [routerLinkActiveOptions]="{exact: true}"
+            ><a
+              class="content__link"
+              [routerLink]="['/profile', user.id]"
+            >Промокоды</a></li>
+            <li
+              class="content__item"
+              routerLinkActive="content__item_active"
+              [routerLinkActiveOptions]="{exact: true}"
+            ><a [routerLink]="['/profile', user.id, 'history']" class="content__link">История</a></li>
+          </ul>
+        </nav>
+        <div class="content__main">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

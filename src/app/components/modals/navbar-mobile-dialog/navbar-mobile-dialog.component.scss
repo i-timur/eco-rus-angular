@@ -1,0 +1,96 @@
+@import "mixins";
+
+.side-menu-navbar {
+  background: white;
+  z-index: 1000;
+
+  &__container {
+    height: 100vh;
+    width: 100vw;
+    padding: 32px 32px 32px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__upper {
+    flex: 1 1 auto;
+  }
+
+  &__bottom {
+    flex: 0 1 auto;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__user-info {
+    margin: 38px 0 0 0;
+  }
+
+
+  &__navigation {
+    margin: 48px 0 0 0;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+    color: $c-base-80;
+  }
+}
+
+.navigation-side-menu-navbar {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: $c-base-88;
+  }
+}
+
+.user-info-navbar {
+  display: flex;
+  column-gap: 12px;
+
+  &__avatar {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'kern' off;
+    color: black;
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    margin: 4px 0 0 0;
+    column-gap: 8px;
+  }
+
+  &__balance-amount {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+  }
+}

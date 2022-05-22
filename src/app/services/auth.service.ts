@@ -8,13 +8,13 @@ import {BehaviorSubject, Observable, tap} from 'rxjs';
 })
 export class AuthService {
 
-  private _isAuthed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!!this.token);
+  private _isAuthed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!!this.isAuthed);
 
   readonly isAuthed$ = this._isAuthed.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  get token() {
+  get isAuthed() {
     return localStorage.getItem('token');
   }
 
@@ -33,12 +33,12 @@ export class AuthService {
     )
       .pipe(tap((resp: any) => {
         this.setToken(resp.token);
-        this._isAuthed.next(!!this.token);
+        this._isAuthed.next(!!this.isAuthed);
       }));
   }
 
   logout() {
     localStorage.removeItem('token');
-    this._isAuthed.next(!!this.token);
+    this._isAuthed.next(!!this.isAuthed);
   }
 }

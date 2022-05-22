@@ -161,35 +161,3 @@
     background: $c-base-72;
   }
 }
-
-.user-info-navbar {
-  display: flex;
-  column-gap: 12px;
-
-  &__avatar {
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  &__name {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    font-feature-settings: 'pnum' on, 'lnum' on, 'kern' off;
-    color: black;
-  }
-
-  &__balance {
-    display: flex;
-    align-items: center;
-    margin: 4px 0 0 0;
-    column-gap: 8px;
-  }
-
-  &__balance-amount {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: black;
-  }
-}

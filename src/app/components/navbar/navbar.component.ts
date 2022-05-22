@@ -5,6 +5,7 @@ import {SignInDialogComponent} from '@components/modals/sign-in-dialog/sign-in-d
 import {Subscription} from 'rxjs';
 import {UserDto} from '../../dto/userDto';
 import {UserService} from '@services/user.service';
+import {NavbarMobileDialogComponent} from '@components/modals/navbar-mobile-dialog/navbar-mobile-dialog.component';
 
 @Component({
   selector: 'app-navbar',
@@ -44,6 +45,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   openSignInDialog() {
-    this.dialogService.openDialog(SignInDialogComponent)
+    this.dialogService.openDialog(SignInDialogComponent);
+  }
+
+  openMobileNavbarDialog(): void {
+    this.dialogService.openDialog(NavbarMobileDialogComponent, {panelClass: ['side-bar']});
   }
 }

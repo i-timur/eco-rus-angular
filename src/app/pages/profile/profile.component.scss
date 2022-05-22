@@ -1,0 +1,94 @@
+@import "mixins";
+
+.profile-page {
+  &__title {
+    margin: 120px 0 0 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: black;
+  }
+
+  &__main {
+    margin: 40px 0 164px 0;
+    display: flex;
+    column-gap: 48px;
+  }
+
+  &__user-info {
+    flex: 0 1 384px;
+    align-self: flex-start;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+  padding: 32px;
+  background: white;
+  border: 1px solid rgba(62, 80, 114, 0.16);
+  border-radius: 20px;
+
+  &__img {}
+
+  &__name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: $c-base-88;
+  }
+
+  &__contacts {
+    font-size: 16px;
+    line-height: 20px;
+    color: $c-base-72;
+  }
+
+  &__contact {
+    &:not(:first-child) {
+      margin: 12px 0 0 0;
+    }
+  }
+
+  &__edit-btn {}
+}
+
+.content {
+
+  &__navigation {
+    background: white;
+    box-shadow: 0 0.5px 0 rgba(black, 0.12);
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  &__item {
+    padding: 7px 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: $c-base-64;
+  }
+
+  &__item_active {
+    color: $c-base-100;
+    border-bottom: 3px solid $c-primary;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__main {
+    margin: 24px 0 0 0;
+  }
+}

@@ -1,0 +1,41 @@
+<div class="promo-code">
+  <div class="promo-code__left">
+    <div class="promo-code__image">
+      <ng-container *ngIf="promoCode?.isActive; else promoCodeUsed">
+        <img src="/assets/images/profile/promo-code-active.png" alt="Промокод" />
+      </ng-container>
+      <ng-template #promoCodeUsed>
+        <img src="assets/images/profile/promo-code-used.png" alt="Промокод" />
+      </ng-template>
+    </div>
+    <p class="promo-code__price">{{promoCode?.price}} ₽</p>
+  </div>
+  <div class="promo-code__right">
+    <div class="promo-code__info">
+      <ul class="promo-code__list">
+        <li class="promo-code__item">
+          <p class="promo-code__subtitle">Дата</p>
+          <div class="promo-code__content">{{promoCode?.date}}</div>
+        </li>
+        <li class="promo-code__item">
+          <p class="promo-code__subtitle">Ссылка на товар:</p>
+          <div class="promo-code__content">
+            <a
+              app-text-btn
+              [routerLink]="['/clothes', promoCode?.itemId]"
+            >adidas.com/clothes/{{promoCode?.itemId | slice:0:27}}...</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="promo-code__btn">
+      <button
+        app-btn
+        color="secondary"
+        size="xs"
+      >
+        Показать qr-код
+      </button>
+    </div>
+  </div>
+</div>

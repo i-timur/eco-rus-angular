@@ -1,0 +1,26 @@
+<div class="history-item">
+  <div class="history-item__left">
+    <ul class="history-item__list">
+      <li class="history-item__item">
+        <p class="history-item__subtitle">Адрес</p>
+        <div class="history-item__content">{{item?.address}}</div>
+      </li>
+      <li class="history-item__item">
+        <p class="history-item__subtitle">Материал</p>
+        <div class="history-item__content">
+          <ul class="history-item__materials">
+            <li class="history-item__material" *ngFor="let material of item?.materials">{{material | material}}</li>
+          </ul>
+        </div>
+      </li>
+      <li class="history-item__item">
+        <p class="history-item__subtitle">Дата</p>
+        <div class="history-item__content">{{item?.date}}</div>
+      </li>
+    </ul>
+  </div>
+  <div class="history-item__right">
+    <img src="/assets/icons/eco-dollar.svg" alt="Эко монета" />
+    <span class="history-item__price">{{item?.price}}</span>
+  </div>
+</div>
