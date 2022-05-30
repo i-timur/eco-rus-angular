@@ -1,0 +1,70 @@
+@import "mixins";
+
+.market-dropdown {
+  position: relative;
+  height: 75vh;
+  width: 100vw;
+  display: none;
+  border-radius: 20px 20px 0px 0px;
+  background-color: white;
+  overflow: auto;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 16px);
+    background: rgba(62, 80, 114, 0.24);
+    border-radius: 4px;
+    width: 32px;
+    height: 3px;
+  }
+
+  @media (max-width: 959px) {
+    display: block;
+  }
+
+  &__order-btns {
+    margin: 39px 0 0 0;
+    padding: 0 0 0 24px;
+    display: flex;
+    column-gap: 12px;
+    overflow: auto;
+  }
+
+  &__control-btns {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 24px;
+    background-color: white;
+  }
+
+  &__control-btn {
+    max-height: 48px;
+  }
+
+  &__filters {
+    margin: 24px 0 156px 0;
+    padding: 0 24px;
+  }
+
+  &__menu-item {
+    &:not(:first-child) {
+      margin: 24px 0 0 0;
+    }
+  }
+
+  &__menu-title {
+    margin: 0 0 16px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-base-80;
+  }
+}

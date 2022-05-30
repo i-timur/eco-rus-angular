@@ -1,20 +1,16 @@
 import {Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef} from '@angular/core';
 import {CheckboxItem} from '@models/CheckboxItem';
 import {HttpClient} from '@angular/common/http';
-import {SexDto} from '../../dto/sexDto';
-import {ItemCategoryDto} from '../../dto/ItemCategoryDto';
-import {DialogService} from '@services/dialog.service';
-import {QrCodeDialogComponent} from '@components/modals/qr-code-dialog/qr-code-dialog.component';
-import {MobileFiltersComponent} from '@components/modals/mobile-filters/mobile-filters.component';
+import {SexDto} from '../../../dto/sexDto';
+import {ItemCategoryDto} from '../../../dto/ItemCategoryDto';
 
 @Component({
-  selector: 'app-market',
-  templateUrl: './market.component.html',
-  styleUrls: ['./market.component.scss'],
+  selector: 'app-mobile-filters',
+  templateUrl: './mobile-filters.component.html',
+  styleUrls: ['./mobile-filters.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MarketComponent implements OnInit {
-
+export class MobileFiltersComponent implements OnInit {
   order: 'popular' | 'price' | 'date' = 'popular';
 
   sexes: CheckboxItem[] = [];
@@ -49,53 +45,10 @@ export class MarketComponent implements OnInit {
   selectedItemCategories: string[] = [];
   selectedBrands: string[] = [];
 
-  cards = [
-    {
-      id: 0,
-      name: 'Nike Air Max 2021',
-      category: 'Мужская обувь',
-      brand: 'NIKE',
-      price: 1000,
-      image: '/assets/images/market/image1.png'
-    },
-    {
-      id: 1,
-      name: 'Nike Air Max 90 Premium',
-      category: 'Мужская обувь',
-      brand: 'NIKE',
-      price: 750,
-      image: '/assets/images/market/image2.png'
-    },
-    {
-      id: 2,
-      name: 'Adidas Alphabounce RC',
-      category: 'Мужская обувь',
-      brand: 'Adidas',
-      price: 1200,
-      image: '/assets/images/market/image3.png'
-    },
-    {
-      id: 3,
-      name: 'Nike Air Max 2021',
-      category: 'Мужская обувь',
-      brand: 'H&M',
-      price: 1000,
-      image: '/assets/images/market/image4.png'
-    },
-    {
-      id: 4,
-      name: 'Nike Air Force 1 Low',
-      category: 'Мужская обувь',
-      brand: 'NIKE',
-      price: 2100,
-      image: '/assets/images/market/image5.png'
-    },
-  ];
 
   constructor(
     private http: HttpClient,
-    private cdr: ChangeDetectorRef,
-    private dialogService: DialogService
+    private cdr: ChangeDetectorRef
   ) {
   }
 
@@ -174,10 +127,6 @@ export class MarketComponent implements OnInit {
       .map((brand) => brand.value);
   }
 
-  openQrCodeDialog() {
-    this.dialogService.openDialog(QrCodeDialogComponent);
-  }
-
   resetFilter() {
     this.sexes = this.sexes.map((sex) => Object.assign({}, {
       ...sex,
@@ -194,9 +143,5 @@ export class MarketComponent implements OnInit {
 
     this.selectedItemCategories = [];
     this.selectedBrands = [];
-  }
-
-  openMobileFilters() {
-    this.dialogService.openFromBottom(MobileFiltersComponent);
   }
 }

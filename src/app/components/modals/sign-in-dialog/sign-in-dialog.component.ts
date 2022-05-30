@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DialogRef} from '@angular/cdk-experimental/dialog';
 import {UserAuthDto} from '../../../dto/userAuthDto';
@@ -20,13 +20,14 @@ export class SignInDialogComponent {
 
   form: FormGroup;
   submitted = false;
-  isUserIncorrect = false;
+  wrongCredentials = false;
 
   constructor(
     private fb: FormBuilder,
     public dialogRef: DialogRef<SignInDialogComponent>,
     private auth: AuthService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private cdr: ChangeDetectorRef
   ) {
     this.form = fb.group({
       phoneNumber: fb.control(null, Validators.required),
@@ -53,8 +54,13 @@ export class SignInDialogComponent {
     this.auth.login(user).subscribe(() => {
       this.submitted = false;
       this.close();
-    }, () => {
+    }, (err) => {
       this.submitted = false;
+      console.log(err);
+      if (err.status === 404) {
+        this.wrongCredentials = true;
+        this.cdr.markForCheck();
+      }
     });
   }
 

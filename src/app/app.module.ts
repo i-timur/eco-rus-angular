@@ -14,7 +14,7 @@ import {SwiperModule} from 'swiper/angular';
 import { SliderComponent } from './components/slider/slider.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { HomeCardComponent } from './components/home-card/home-card.component';
-import { ModalContainerComponent } from './components/modals/modal-container/modal-container.component';
+import { ModalContainerComponent } from './components/modal-containers/modal-container/modal-container.component';
 import {PortalModule} from '@angular/cdk/portal';
 import { SignInDialogComponent } from './components/modals/sign-in-dialog/sign-in-dialog.component';
 import { InputComponent } from './components/ui/input/input.component';
@@ -51,6 +51,9 @@ import { HistoryItemComponent } from './components/history-item/history-item.com
 import { MaterialPipe } from './pipes/material.pipe';
 import { UserPromoCodeComponent } from './components/user-promo-code/user-promo-code.component';
 import { NavbarMobileDialogComponent } from './components/modals/navbar-mobile-dialog/navbar-mobile-dialog.component';
+import { FromRightModalContainerComponent } from './components/modal-containers/from-right-modal-container/from-right-modal-container.component';
+import { FromBottomModalContainerComponent } from './components/modal-containers/from-bottom-modal-container/from-bottom-modal-container.component';
+import { MobileFiltersComponent } from './components/modals/mobile-filters/mobile-filters.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,10 @@ import { NavbarMobileDialogComponent } from './components/modals/navbar-mobile-d
     HistoryItemComponent,
     MaterialPipe,
     UserPromoCodeComponent,
-    NavbarMobileDialogComponent
+    NavbarMobileDialogComponent,
+    FromRightModalContainerComponent,
+    FromBottomModalContainerComponent,
+    MobileFiltersComponent
   ],
   imports: [
     BrowserModule,

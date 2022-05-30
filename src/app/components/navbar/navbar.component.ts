@@ -49,6 +49,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   openMobileNavbarDialog(): void {
-    this.dialogService.openDialog(NavbarMobileDialogComponent, {panelClass: ['side-bar']});
+    this.dialogService.openFromRightDialog(NavbarMobileDialogComponent);
   }
 }

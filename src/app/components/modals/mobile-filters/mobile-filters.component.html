@@ -1,0 +1,76 @@
+<div class="market-dropdown">
+  <div class="market-dropdown__container">
+    <div class="market-dropdown__order-btns">
+      <div class="market-dropdown__order-btn">
+        <button
+          app-order-btn
+          type="button"
+          [isActive]="order === 'popular'"
+          (click)="order = 'popular'"
+        >По популярности</button>
+      </div>
+
+      <div class="market-dropdown__order-btn">
+        <button
+          app-order-btn
+          type="button"
+          [isActive]="order === 'price'"
+          (click)="order = 'price'"
+        >По цене</button>
+      </div>
+
+      <div class="market-dropdown__order-btn">
+        <button
+          app-order-btn
+          type="button"
+          [isActive]="order === 'date'"
+          (click)="order = 'date'"
+        >По новизне</button>
+      </div>
+    </div>
+
+    <div class="market-dropdown__filters">
+      <div class='market-dropdown__menu-item'>
+        <h4 class='market-dropdown__menu-title'>Пол</h4>
+
+        <div class='market-dropdown__options'>
+          <app-checkbox-group [options]="sexes"></app-checkbox-group>
+        </div>
+
+      </div>
+
+      <div class='market-dropdown__menu-item'>
+        <h4 class='market-dropdown__menu-title'>Тип товара</h4>
+        <div class='market-dropdown__options'>
+          <app-checkbox-group [options]="itemCategories" (toggle)="onItemCategoriesChange($event)"></app-checkbox-group>
+        </div>
+      </div>
+
+      <div class='market-dropdown__menu-item'>
+        <h4 class='market-dropdown__menu-title'>Брэнд</h4>
+        <div class='market-dropdown__options'>
+          <app-checkbox-group [options]="brands" (toggle)="onBrandChange($event)"></app-checkbox-group>
+        </div>
+      </div>
+    </div>
+    <div class="market-dropdown__control-btns">
+      <div class="market-dropdown__control-btn">
+        <button
+          app-btn
+          type="button"
+          size="sm"
+          color="primary"
+        >Применить</button>
+      </div>
+      <div class="market-dropdown__control-btn">
+        <button
+          app-btn
+          type="button"
+          size="sm"
+          color="secondary"
+          (click)="resetFilter()"
+        >Сбросить фильтры</button>
+      </div>
+    </div>
+  </div>
+</div>
