@@ -122,6 +122,11 @@
     }
   }
 
+  &__skeleton-price {
+    display: flex;
+    margin: 18px 0 0 0;
+  }
+
   &__first-card {
     display: flex;
     flex-direction: column;

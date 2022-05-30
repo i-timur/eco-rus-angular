@@ -107,7 +107,47 @@
             </li>
 
             <li class='content-market__item' *ngFor="let item of cards">
-              <div class='content-market__card'>
+              <ng-container *ngIf="loading">
+                <ngx-skeleton-loader
+                  count="1"
+                  [theme]="{
+                  height: '275px',
+                  borderRadius: '16px'
+                }"
+                ></ngx-skeleton-loader>
+                <ngx-skeleton-loader
+                  count="1"
+                  [theme]="{
+                  margin: '16px 0 0 0',
+                  height: '20px'
+                }"
+                ></ngx-skeleton-loader>
+                <ngx-skeleton-loader
+                  count="1"
+                  [theme]="{
+                  margin: '5px 0 0 0',
+                  height: '20px'
+                }"
+                ></ngx-skeleton-loader>
+                <div class='content-market__skeleton-price'>
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                    width: '24px',
+                    height: '24px'
+                }"
+                  ></ngx-skeleton-loader>
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                    margin: '0 0 0 8px',
+                    width: '50px',
+                    height: '24px'
+                }"
+                  ></ngx-skeleton-loader>
+                </div>
+              </ng-container>
+              <div *ngIf="!loading" class='content-market__card'>
                 <a [routerLink]="['/item', item.id]">
                  <app-market-card
                   [image]="item.image"

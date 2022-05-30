@@ -54,6 +54,7 @@ import { NavbarMobileDialogComponent } from './components/modals/navbar-mobile-d
 import { FromRightModalContainerComponent } from './components/modal-containers/from-right-modal-container/from-right-modal-container.component';
 import { FromBottomModalContainerComponent } from './components/modal-containers/from-bottom-modal-container/from-bottom-modal-container.component';
 import { MobileFiltersComponent } from './components/modals/mobile-filters/mobile-filters.component';
+import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { MobileFiltersComponent } from './components/modals/mobile-filters/mobil
     HttpClientModule,
     LeafletModule,
     OverlayModule,
-    A11yModule
+    A11yModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [
     {

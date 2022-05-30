@@ -92,6 +92,8 @@ export class MarketComponent implements OnInit {
     },
   ];
 
+  loading: boolean = true;
+
   constructor(
     private http: HttpClient,
     private cdr: ChangeDetectorRef,
@@ -120,6 +122,11 @@ export class MarketComponent implements OnInit {
         });
         this.cdr.markForCheck();
       });
+
+    setTimeout(() => {
+      this.loading = false;
+      this.cdr.markForCheck();
+    }, 3000);
   }
 
   onItemCategoriesChange(values: string[]) {
