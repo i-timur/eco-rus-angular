@@ -1,0 +1,26 @@
+.mobile-map-containers {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 16px 16px 0px 0px;
+  z-index: 100;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 16px);
+    background: rgba(62, 80, 114, 0.24);
+    border-radius: 4px;
+    width: 32px;
+    height: 3px;
+  }
+
+  &__container {
+    margin: 29px 0 0 0;
+    padding: 12px 24px;
+  }
+}

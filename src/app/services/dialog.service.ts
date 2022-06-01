@@ -42,6 +42,7 @@ export class DialogService {
   openFromBottom<T>(component: ComponentType<T>, config: DialogConfig = {}): DialogRef<FromBottomModalContainerComponent> {
     return this.dialog.openFromComponent(component, {
       maxWidth: 'none',
+      position: {bottom: '0'},
       ...config,
       containerComponent: FromBottomModalContainerComponent
     });

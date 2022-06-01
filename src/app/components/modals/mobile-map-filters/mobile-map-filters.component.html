@@ -1,0 +1,42 @@
+<div class="map-dropdown">
+  <div class="map-dropdown__container">
+
+    <div class="map-dropdown__filters">
+      <div class='map-dropdown__menu-item'>
+        <h4 class='map-dropdown__menu-title'>Материал</h4>
+
+        <div class='map-dropdown__options'>
+          <app-checkbox-group [options]="materials" (toggle)="onMaterialChange($event)"></app-checkbox-group>
+        </div>
+
+      </div>
+
+      <div class='map-dropdown__menu-item'>
+        <h4 class='map-dropdown__menu-title'>Брэнд</h4>
+        <div class='map-dropdown__options'>
+          <app-checkbox-group [options]="shops"></app-checkbox-group>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-dropdown__control-btns">
+      <div class="map-dropdown__control-btn">
+        <button
+          app-btn
+          type="button"
+          size="sm"
+          color="primary"
+        >Применить</button>
+      </div>
+      <div class="map-dropdown__control-btn">
+        <button
+          app-btn
+          type="button"
+          size="sm"
+          color="secondary"
+          (click)="resetFilter()"
+        >Сбросить фильтры</button>
+      </div>
+    </div>
+  </div>
+</div>

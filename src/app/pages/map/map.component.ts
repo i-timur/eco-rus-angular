@@ -1,5 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {CheckboxItem} from '@models/CheckboxItem';
+import {DialogService} from '@services/dialog.service';
+import {MobileMapFiltersComponent} from '@components/modals/mobile-map-filters/mobile-map-filters.component';
+import {MobileMapContainersComponent} from '@components/modals/mobile-map-containers/mobile-map-containers.component';
 
 @Component({
   selector: 'app-map',
@@ -8,6 +11,9 @@ import {CheckboxItem} from '@models/CheckboxItem';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MapComponent {
+
+  constructor(private dialogService: DialogService) {
+  }
 
   shops: CheckboxItem[] = [
     {
@@ -144,5 +150,13 @@ export class MapComponent {
     this.materialsTitle = this.selectedMaterials.includes('ALL') ?
       `Выбрано ${this.selectedMaterials.length - 1} материалов` :
       `Выбрано ${this.selectedMaterials.length} материала`
+  }
+
+  openMobileFilters() {
+    this.dialogService.openFromBottom(MobileMapFiltersComponent);
+  }
+
+  openMobileContainers() {
+    this.dialogService.openFromBottom(MobileMapContainersComponent);
   }
 }

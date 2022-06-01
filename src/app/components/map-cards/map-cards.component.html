@@ -1,7 +1,7 @@
 <div class="map-cards">
   <div class="map-cards__container">
     <div class="map-cards__card" *ngFor="let card of cards">
-      <a [routerLink]="['/map', 'details', card.id]">
+      <a [routerLink]="['/map', 'details', card.id]" (click)="openDetails()">
         <app-map-card
           [address]="card.address"
           [text]="card.text"

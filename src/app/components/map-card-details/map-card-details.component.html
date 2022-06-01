@@ -3,6 +3,7 @@
     <a
       routerLink="/map"
       class="map-card-details__link"
+      (click)="close()"
     >
       <img src="assets/icons/arrow-left-blue.svg" alt="back" />
       Вернуться назад
@@ -65,5 +66,13 @@
         </div>
       </div>
     </div>
+    <button
+      app-btn
+      type="button"
+      class="map-card-details__close"
+      color="primary"
+      size="m"
+      (click)="close()"
+    >Закрыть</button>
   </div>
 </div>

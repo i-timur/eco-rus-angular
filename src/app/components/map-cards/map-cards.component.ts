@@ -1,4 +1,6 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
+import {DialogService} from '@services/dialog.service';
+import {MapCardDetailsComponent} from '@components/map-card-details/map-card-details.component';
 
 interface Card {
   id: number;
@@ -13,7 +15,10 @@ interface Card {
   styleUrls: ['./map-cards.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MapCardsComponent {
+export class MapCardsComponent implements OnInit {
+  constructor(private dialogService: DialogService) {
+  }
+
   cards: Card[] = [
     {
       id: 0,
@@ -58,4 +63,17 @@ export class MapCardsComponent {
       image: 'assets/images/map/containers-s.png'
     },
   ];
+
+  screenWidth!: number;
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+  }
+
+  openDetails() {
+    if (this.screenWidth > 959) {
+      return;
+    }
+    this.dialogService.openDialog(MapCardDetailsComponent);
+  }
 }

@@ -55,6 +55,8 @@ import { FromRightModalContainerComponent } from './components/modal-containers/
 import { FromBottomModalContainerComponent } from './components/modal-containers/from-bottom-modal-container/from-bottom-modal-container.component';
 import { MobileFiltersComponent } from './components/modals/mobile-filters/mobile-filters.component';
 import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
+import { MobileMapFiltersComponent } from './components/modals/mobile-map-filters/mobile-map-filters.component';
+import { MobileMapContainersComponent } from './components/modals/mobile-map-containers/mobile-map-containers.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +100,9 @@ import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
     NavbarMobileDialogComponent,
     FromRightModalContainerComponent,
     FromBottomModalContainerComponent,
-    MobileFiltersComponent
+    MobileFiltersComponent,
+    MobileMapFiltersComponent,
+    MobileMapContainersComponent
   ],
   imports: [
     BrowserModule,

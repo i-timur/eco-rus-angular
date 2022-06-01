@@ -11,7 +11,7 @@
           <app-search-bar></app-search-bar>
         </div>
 
-        <button class="controls-map__mobile-filter-settings">
+        <button class="controls-map__mobile-filter-settings" (click)="openMobileFilters()">
           <img src="assets/icons/filter.svg" alt="filters" />
         </button>
 
@@ -38,13 +38,21 @@
       </div>
     </div>
 
-        <div class="map__cards cards-map">
-          <div class="cards-map__container">
+    <div class="map__cards cards-map">
+      <div class="cards-map__container">
 
-            <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
 
-          </div>
-        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="map__mobile-btn"
+      (click)="openMobileContainers()"
+    >
+      Показать 12 пунктов сбора
+    </button>
 
   </div>
 </div>

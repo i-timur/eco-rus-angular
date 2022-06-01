@@ -48,6 +48,25 @@
     left: 0;
     width: 100%;
   }
+
+  &__mobile-btn {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 48px;
+    text-align: center;
+    background: white;
+    border-radius: 12px 12px 0px 0px;
+    line-height: 16px;
+    color: black;
+    z-index: 100;
+
+    @media (max-width: 959px) {
+      display: block;
+    }
+  }
 }
 
 .controls-map {
